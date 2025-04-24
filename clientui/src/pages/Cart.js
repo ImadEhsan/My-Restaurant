@@ -18,7 +18,7 @@ const Cart = () => {
       try {
           const stripe = await loadStripe("pk_test_51RDOEFGPuvUOLeRLahXrWm7BwQ6VPK7PMMWhR38Sr587Lm9ogbtNvxGN5By2ypIv7uqk9cOMp9DhMS3zZ4y6j8j300esQeEpup");
   
-          const response = await fetch("https://my-restaurant-backend.onrender.com", {
+          const response = await fetch("https://my-restaurant-backend.onrender.com/api/stripepayment", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(cartItems)
