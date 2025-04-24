@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosinstances = axios.create({
-    baseURL: 'http://localhost:8080/api',
+    baseURL: 'https://my-restaurant-backend.onrender.com',
     // headers: {
     //     'Authorization': `Bearer ${localStorage.getItem('token')}`,
     // },
