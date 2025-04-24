@@ -12,8 +12,11 @@ dotenv.config();
 const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors({
-  origin: "http://localhost:3000", // 👈 exact frontend origin
-  credentials: true               // 👈 cookie/session ke liye required
+  origin: [
+    "http://localhost:3000",
+    "https://my-restaurant-frontend-5hc3.onrender.com/"
+  ],
+  credentials: true             // 👈 cookie/session ke liye required
 }));
 dbconnection();
 app.use(cookieParser())
