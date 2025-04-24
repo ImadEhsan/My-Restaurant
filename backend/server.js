@@ -13,8 +13,8 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors({
   origin: [
-    "http://localhost:3000",
-    "https://my-restaurant-frontend-5hc3.onrender.com/"
+    "https://my-restaurant-frontend-5hc3.onrender.com",
+    "http://localhost:3000"
   ],
   credentials: true             // 👈 cookie/session ke liye required
 }));
