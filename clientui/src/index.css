@@ -1,0 +1,33 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Note: Tailwind ka 'base' (preflight) bhi resets apply karta hai,
+     to aap shayad is '*' rule ko hata bhi sakte hain baad mein agar chahen */
+}
+
+body {
+  font-family: "roboto", sans-serif;
+  /* Yeh bhi Tailwind ki default font setting se override ho sakta hai,
+     aap isko tailwind.config.js mein configure kar sakte hain agar zaroorat ho */
+}
+
+/* Aapke baaqi custom global styles yahan aa sakte hain */
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "roboto", sans-serif;
+} */

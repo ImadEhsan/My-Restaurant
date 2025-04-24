@@ -1,0 +1,10 @@
+.blink-popup .MuiDialog-paper {
+    animation: blink-animation 0.5s ease-in-out 3;
+  }
+  
+  @keyframes blink-animation {
+    0% { box-shadow: 0 0 0px #ff4081; }
+    50% { box-shadow: 0 0 20px #ff4081; }
+    100% { box-shadow: 0 0 0px #ff4081; }
+  }
+  
