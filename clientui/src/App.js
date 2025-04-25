@@ -14,6 +14,7 @@ import Achalogin from "./pages/Achalogin";
 import { useSelector } from "react-redux";
 import OrderSuccess from "./pages/OrderSuccess";
 import SearchBox from "./pages/SearchBox";
+import { ToastContainer } from "react-toastify";
 
 
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/search/:keyword" element={<Menu/>} />
           <Route path="*" element={<Pagenotfound />} />
         </Routes>
+        <ToastContainer/>
       </BrowserRouter>
     </div>
   );

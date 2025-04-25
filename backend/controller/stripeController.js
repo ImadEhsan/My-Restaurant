@@ -39,7 +39,7 @@ export const makepayment = async (req, res) => {
             line_items: lineItems,
             mode: "payment",
             success_url:"https://my-restaurant-frontend-5hc3.onrender.com/OrderSuccess",
-            cancel_url:"https://my-restaurant-frontend-5hc3.onrender.com/cart"
+            cancel_url:"https://my-restaurant-frontend-5hc3.onrender.com/addcart"
             // success_url: process.env.success_url  || "http://localhost:3000/OrderSuccess",
             // cancel_url: process.env.cancel_url  || "http://localhost:3000/cart",
             
