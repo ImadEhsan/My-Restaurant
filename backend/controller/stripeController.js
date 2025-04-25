@@ -1,12 +1,15 @@
+
+
 ///// imad bhai ka stripe controller ///////////
 
 import Stripe from "stripe";
 import * as config from "../config/StripeKey.js"
-import dotenv from 'dotenv'; // Agar .env file use kar rahe hain
+import { stripeSecretKey } from '../config/StripeKey.js';
+// import dotenv from 'dotenv'; // Agar .env file use kar rahe hain
 
 // dotenv.config( stripe_secret_key ); // Load environment variables
 
-const stripe = new Stripe(config.secretKey); 
+const stripe = new Stripe(stripeSecretKey); 
 
 export const makepayment = async (req, res) => {
     try {
@@ -35,8 +38,8 @@ export const makepayment = async (req, res) => {
             payment_method_types: ["card"],
             line_items: lineItems,
             mode: "payment",
-            success_url:config.success_url,
-            cancel_url:config.cancel_url
+            success_url:"https://my-restaurant-frontend-5hc3.onrender.com//OrderSuccess",
+            cancel_url:"https://my-restaurant-frontend-5hc3.onrender.com//cart"
             // success_url: process.env.success_url  || "http://localhost:3000/OrderSuccess",
             // cancel_url: process.env.cancel_url  || "http://localhost:3000/cart",
             
