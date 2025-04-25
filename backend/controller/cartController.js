@@ -4,7 +4,7 @@ import User from "../model/usermodel.js";
 
 export const Addcart = async (req, res) =>{
     try {
-        console.log("Received request body:", req.body);
+        // console.log("Received request body:", req.body);
         const { productId, quantity = 1, userId } = req.body;
         if (!userId) return res.status(400).json({ message: "User ID is required" });
         if (!productId) return res.status(400).json({ message: "Product ID is required" });
@@ -33,7 +33,7 @@ export const Addcart = async (req, res) =>{
         await cart.save();
         res.status(200).json({ message: "Product added to cart", cart });
     } catch (error) {
-        console.error("Full Server Error:", error);
+        // console.error("Full Server Error:", error);
         res.status(500).json({ message: "Server Error" });
     }
 };
@@ -65,7 +65,7 @@ export const fetchCart = async (req, res) => {
 
         res.status(200).json({ cart: formattedCart });
     } catch (error) {
-        console.error("Error fetching cart:", error);
+        // console.error("Error fetching cart:", error);
         res.status(500).json({ message: "Server Error" });
     }
 };
@@ -88,7 +88,7 @@ export const incrementCartItem = async (req, res) => {
 
         res.status(200).json({ message: "Quantity increased", cart });
     } catch (error) {
-        console.error("Increment Error:", error);
+        // console.error("Increment Error:", error);
         res.status(500).json({ message: "Server Error" });
     }
 };
@@ -117,7 +117,7 @@ export const decrementCartItem = async (req, res) => {
 
         res.status(200).json({ message: "Quantity decreased", cart });
     } catch (error) {
-        console.error("Decrement Error:", error);
+        // console.error("Decrement Error:", error);
         res.status(500).json({ message: "Server Error" });
     }
 };
@@ -138,7 +138,7 @@ export const removeCartItem = async (req, res) => {
 
         res.status(200).json({ message: "Product removed from cart", cart });
     } catch (error) {
-        console.error("Remove Item Error:", error);
+        // console.error("Remove Item Error:", error);
         res.status(500).json({ message: "Server Error" });
     }
 };

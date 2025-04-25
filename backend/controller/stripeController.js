@@ -15,7 +15,7 @@ export const makepayment = async (req, res) => {
     try {
         const products = req.body; 
 
-        console.log("Received Products:", products);
+        // console.log("Received Products:", products);
 
         if (!products || products.length === 0) {
             return res.status(400).json({ message: "Cart is empty" });
@@ -45,12 +45,12 @@ export const makepayment = async (req, res) => {
             
         });
 
-        console.log("Session Created:", session);
+        // console.log("Session Created:", session);
         res.status(200).json({ sessionId: session.id });
         
 
     } catch (error) {
-        console.error("Stripe Error:", error);
+        // console.error("Stripe Error:", error);
         res.status(500).json({ error: error.message });
     }
 };

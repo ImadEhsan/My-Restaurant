@@ -1,5 +1,3 @@
-
-//////////// imad login page start //////////////
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { toast } from 'react-toastify'
@@ -15,17 +13,21 @@ const Login = () => {
         password: ''
     })
 
-    const handleloginSubmit = (e) => {
-        e.preventDefault();
-         let response = dispatch(loginUser(formdata))
-                  if (response.error){ 
-                  toast.error("Incorrect Credentials")
-                  }else {
-                  navigate('/menu')
-                  toast.success("Logged in Successful")
-                  console.log(formdata)
-                  }
-    }
+    const handleloginSubmit = async (e) => {
+      e.preventDefault();
+      
+      try {
+          const response = await dispatch(loginUser(formdata)); // Wait for the async action to finish
+          if (response.error) {
+              toast.error("Incorrect Credentials");
+          } else {
+              navigate('/menu');
+              toast.success("Logged in Successfully");
+          }
+      } catch (error) {
+          toast.error("An error occurred during login");
+      }
+  }
 
 
   return (

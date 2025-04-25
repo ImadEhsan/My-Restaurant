@@ -25,20 +25,20 @@ const Cart = () => {
           });
   
           const session = await response.json();
-          console.log("Stripe Session:", session);
+          // console.log("Stripe Session:", session);
   
           if (!session.sessionId) {
-              console.error("Session ID not received", session);
+              // console.error("Session ID not received", session);
               return;
           }
   
           const { error } = await stripe.redirectToCheckout({ sessionId: session.sessionId });
   
           if (error) {
-              console.error("Stripe Checkout Error:", error);
+              // console.error("Stripe Checkout Error:", error);
           }
       } catch (error) {
-          console.error("Checkout Error:", error);
+          // console.error("Checkout Error:", error);
       }
   };
   

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axiosinstances from "../services/axiosinstances";
-import axios from "axios";
+// import axios from "axios";
 
 // Signup user
 export const Signupuser = createAsyncThunk(
@@ -36,10 +36,10 @@ export const logoutuser = createAsyncThunk(
     try {
       // const response = await axios.post("http://localhost:8080/api/logout", {}, { withCredentials: true });
       const response = await axiosinstances.post("/logout", {}, { withCredentials: true });
-      console.log("Logout Response:", response.data);
+      // console.log("Logout Response:", response.data);
       return response.data;
     } catch (error) {
-      console.error("Logout Error:", error.response?.data || error.message);
+      // console.error("Logout Error:", error.response?.data || error.message);
       return rejectWithValue(error.response?.data?.message || "Logout failed");
     }
   }

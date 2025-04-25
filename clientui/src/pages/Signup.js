@@ -22,7 +22,7 @@ const Signup = () => {
            else {
           navigate('/login')
           toast.success("Signup Successful")
-          console.log(formdata)
+          // console.log(formdata)
           }
     }
 
